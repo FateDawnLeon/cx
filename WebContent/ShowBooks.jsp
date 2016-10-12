@@ -6,8 +6,8 @@
         <title>查询结果</title>
     </head>
     <body>
-       <h1> <s:property value="name" />的全部著作如下：</h1>
-       <table>
+       <h1 align="center"> <s:property value="name" />的全部著作</h1>
+       <table align="center" border="1">
             <tr><td>索引</td><td>书名</td><td>作者ID</td><td>操作</td></tr>
             <s:iterator value="books" status="st">
                 <tr>

@@ -7,7 +7,7 @@
     </head>
     <body>
     <h1 align = center>图书信息</h1>
-    <table align = center>
+    <table align = center border="1">
          <tr> 
          <td>ISBN</td> 
          <td><s:property value="isbn" /></td>
