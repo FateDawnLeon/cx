@@ -3,9 +3,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>输入错误页面</title>
+<title>删除失败</title>
 </head>
 <body>
-<h1>您的输入结果错误！</h1>
+<h1>删除失败！</h1>
 </body>
 </html>

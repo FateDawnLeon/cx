@@ -52,7 +52,7 @@ public class Author {
 			Statement sql2 = con.createStatement();
 			ResultSet res1 = sql1.executeQuery("select * from Author where Name='"+name+"';");
 			if(!res1.next()){
-				return "failure";
+				return "abscence";
 			}
 			res1.beforeFirst();
 			books = new ArrayList<Book>();

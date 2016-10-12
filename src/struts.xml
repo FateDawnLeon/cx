@@ -7,7 +7,7 @@
         
         <action name="ShowBooks" class="tutorial.Author" method="searchAuthorBooks">
             <result name="success">ShowBooks.jsp</result>
-            <result name="failure">InputError.jsp</result>
+            <result name="abscence">SearchFailure.jsp</result>
             <result name="exception">Exception.jsp</result>
         </action>
         
@@ -17,7 +17,7 @@
         
         <action name="Delete" class="tutorial.Book" method="deleteBook">
             <result name="success">Search.jsp</result>
-            <result name="failure">Failure.jsp</result>
+            <result name="failure">DeleteFailure.jsp</result>
             <result name="exception">Exception.jsp</result>
         </action>
         

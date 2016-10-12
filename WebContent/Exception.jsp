@@ -3,9 +3,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Exception</title>
+<title>查询失败</title>
 </head>
 <body>
-<h1>系统抛出java异常！</h1>
+<h1>系统异常！</h1>
 </body>
 </html>

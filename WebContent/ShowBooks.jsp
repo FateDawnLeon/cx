@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
     <head>
-        <title>Show Books</title>
+        <title>查询结果</title>
     </head>
     <body>
        <h1> <s:property value="name" />的全部著作如下：</h1>

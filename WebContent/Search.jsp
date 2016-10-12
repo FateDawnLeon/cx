@@ -14,8 +14,8 @@
         </s:form>
         <h2>添加新的图书</h2>
         <s:form action="AddBook">
-            <s:textfield name="isbn" label="ISBN"/>
-            <s:textfield name="title" label="书名"/>
+            <s:textfield name="isbn"  label="ISBN" />
+            <s:textfield name="title" label="书名" />
             <s:textfield name="authorID" label="作者ID"/>
             <s:textfield name="publisher" label="出版社"/>
             <s:textfield name="publishDate" label="出版日期"/>
