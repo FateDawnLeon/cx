@@ -1,6 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
     <head>
         <title>Search</title>
@@ -8,19 +6,21 @@
     <body>
         <h1>图书管理系统</h1>
         <h2>作者图书搜索</h2>
-        <s:form action="ShowBooks">
-            <s:textfield name="name" label="作者名"/>
-            <s:submit value="搜索"/>
-        </s:form>
+        <form action="ShowBooks">
+                       作者名：<input type="text"   name="name" required>
+                   <input type="submit" value="搜索">
+        </form>
         <h2>添加新的图书</h2>
-        <s:form action="AddBook">
-            <s:textfield name="isbn"  label="ISBN" />
-            <s:textfield name="title" label="书名" />
-            <s:textfield name="authorID" label="作者ID"/>
-            <s:textfield name="publisher" label="出版社"/>
-            <s:textfield name="publishDate" label="出版日期"/>
-            <s:textfield name="price" label="价格"/>
-            <s:submit value="添加"/>
-        </s:form>
+        <form action="AddBook">
+          <table>
+            <tr><td>ISBN：</td><td><input type="text"  name="isbn" required></td></tr>
+            <tr><td>书名：</td><td><input type="text"   name="title" required></td></tr>
+            <tr><td>作者ID：</td><td><input type="text"  name="authorID" required></td></tr>
+            <tr><td>出版社：</td><td><input type="text"  name="publisher" ></td></tr>
+            <tr><td>出版时间：</td><td><input type="text"  name="publishDate" ></td></tr>
+            <tr><td>价格：</td><td><input type="text"   name="price" ></td></tr>
+            <tr><td></td><td><input type="submit"  value="添加"></td></tr>
+          </table>
+        </form>
     </body>
 </html>

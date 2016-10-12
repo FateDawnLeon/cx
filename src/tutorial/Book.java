@@ -78,30 +78,38 @@ public class Book {
         	Conn c = new Conn();
     		Connection con = c.getConnection();
     		try{
-    			if(!isbn.equals("") && !title.equals("") && authorID>0){
-    				Statement sql = con.createStatement();
-    				ResultSet res = sql.executeQuery("select * from Author where AuthorID="+authorID+";");   
-    				if(!res.next()){
-    					return "abscence";
-    				}
-    				int outcome = sql.executeUpdate("insert into Book values(" 
-    				           +  "'"  +  isbn            +  "',"
-    				           +  "'"  +  title      	  +  "',"
-    				           +  ""   +  authorID		  +  ","
-    				           +  "'"  +  publisher       +  "',"
-    				           +  "'"  +  publishDate     +  "',"
-    				           +  ""   +  price           +  ");"
-    				           );
-    				if(outcome==1){
-    					return "success";
-    				}
-    				else{
-    					return "failure";
-    				}
-    			}
-    			else{
-    				return "inputerror";
-    			}
+    			Statement sql = con.createStatement();
+				ResultSet res = sql.executeQuery("select * from Author where AuthorID="+authorID+";");   
+				if(!res.next()){
+					return "abscence";
+				}
+				int outcome;
+				if(publishDate==null){
+					outcome = sql.executeUpdate("insert into Book values(" 
+  				           +  "'"  +  isbn            +  "',"
+  				           +  "'"  +  title      	  +  "',"
+  				           +  ""   +  authorID		  +  ","
+  				           +  "'"  +  publisher       +  "',"
+  				           +  ""  +  publishDate     +  ","
+  				           +  ""   +  price           +  ");"
+  				           );
+				}
+				else{
+					outcome = sql.executeUpdate("insert into Book values(" 
+ 				           +  "'"  +  isbn            +  "',"
+ 				           +  "'"  +  title      	  +  "',"
+ 				           +  ""   +  authorID		  +  ","
+ 				           +  "'"  +  publisher       +  "',"
+ 				           +  "'"  +  publishDate     +  "',"
+ 				           +  ""   +  price           +  ");"
+ 				           );
+				}
+				if(outcome==1){
+					return "success";
+				}
+				else{
+					return "failure";
+				}
     		}catch(Exception e){
     			e.printStackTrace();
     			return "exception";

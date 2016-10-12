@@ -24,13 +24,13 @@
         <action name="AddBook" class="tutorial.Book" method="addBook">
             <result name="success">Search.jsp</result>
             <result name="abscence">AddAuthor.jsp</result>
-            <result name="failure">Failure.jsp</result>
+            <result name="failure">AddFailure.jsp</result>
             <result name="exception">Exception.jsp</result>
         </action>
         
         <action name="AddAuthor" class="tutorial.Author" method="addAuthor">
             <result name="success">Search.jsp</result>
-            <result name="failure">Failure.jsp</result>
+            <result name="failure">AddFailure.jsp</result>
             <result name="exception">Exception.jsp</result>
         </action>
         
