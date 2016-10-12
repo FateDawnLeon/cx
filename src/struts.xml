@@ -4,38 +4,33 @@
 <struts>
     <include file="struts-default.xml"/>
     <package name="tutorial" extends="struts-default">
-        <action name="HelloWorld" class="tutorial.HelloWorld">
-            <result>HelloWorld.jsp</result>
-        </action>
         
-        <action name="ShowBooks" class="tutorial.AuthorSearch">
+        <action name="ShowBooks" class="tutorial.Author" method="searchAuthorBooks">
             <result name="success">ShowBooks.jsp</result>
             <result name="failure">InputError.jsp</result>
             <result name="exception">Exception.jsp</result>
         </action>
         
-        <action name="CheckInfo" class="tutorial.Book">
+        <action name="CheckInfo" class="tutorial.Book" method="showBookInfo">
             <result>BookInformation.jsp</result>
         </action>
         
-        <action name="Delete" class="tutorial.DeleteBook">
+        <action name="Delete" class="tutorial.Book" method="deleteBook">
             <result name="success">Search.jsp</result>
             <result name="failure">Failure.jsp</result>
             <result name="exception">Exception.jsp</result>
         </action>
         
-        <action name="AddBook" class="tutorial.AddBook">
+        <action name="AddBook" class="tutorial.Book" method="addBook">
             <result name="success">Search.jsp</result>
-            <result name="abscence">Search.jsp</result>
+            <result name="abscence">AddAuthor.jsp</result>
             <result name="failure">Failure.jsp</result>
-            <result name="inputerror">InputError.jsp</result>
             <result name="exception">Exception.jsp</result>
         </action>
         
-        <action name="AddAuthor" class="tutorial.">
+        <action name="AddAuthor" class="tutorial.Author" method="addAuthor">
             <result name="success">Search.jsp</result>
             <result name="failure">Failure.jsp</result>
-            <result name="inputerror">InputError.jsp</result>
             <result name="exception">Exception.jsp</result>
         </action>
         

@@ -1,6 +1,9 @@
 package tutorial;
 
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class Book {
         private String isbn;
@@ -47,17 +50,62 @@ public class Book {
         public void setPrice(float price){
         	this.price = price;
         }
+
         
-        public String execute(){
+        public String showBookInfo(){
         	return "success";
         }
         
         public String deleteBook(){
-        	return "";
+        	Conn c = new Conn();
+    		Connection con = c.getConnection();
+    		try{
+    			Statement sql = con.createStatement();
+    			int res = sql.executeUpdate("delete from Book where ISBN='"+isbn+"';");
+    			if(res==1){
+    				return "success";
+    			}
+    			else{
+    				return "failure";
+    			}
+    		}catch(Exception e){
+    			e.printStackTrace();
+    			return "exception";
+    		}
         }
         
         public String addBook(){
-        	return "";
+        	Conn c = new Conn();
+    		Connection con = c.getConnection();
+    		try{
+    			if(!isbn.equals("") && !title.equals("") && authorID>0){
+    				Statement sql = con.createStatement();
+    				ResultSet res = sql.executeQuery("select * from Author where AuthorID="+authorID+";");   
+    				if(!res.next()){
+    					return "abscence";
+    				}
+    				int outcome = sql.executeUpdate("insert into Book values(" 
+    				           +  "'"  +  isbn            +  "',"
+    				           +  "'"  +  title      	  +  "',"
+    				           +  ""   +  authorID		  +  ","
+    				           +  "'"  +  publisher       +  "',"
+    				           +  "'"  +  publishDate     +  "',"
+    				           +  ""   +  price           +  ");"
+    				           );
+    				if(outcome==1){
+    					return "success";
+    				}
+    				else{
+    					return "failure";
+    				}
+    			}
+    			else{
+    				return "inputerror";
+    			}
+    		}catch(Exception e){
+    			e.printStackTrace();
+    			return "exception";
+    		}
         }
         
         public String updateBook(){

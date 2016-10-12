@@ -6,6 +6,7 @@
         <title>添加作者</title>
     </head>
     <body>
+        <h1>作者不存在，请先添加作者信息！</h1>
         <s:form action="AddAuthor">
             <s:textfield name="name" label="作者姓名"/>
             <s:textfield name="age" label="作者年龄"/>

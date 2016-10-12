@@ -6,9 +6,9 @@
         <title>Show Books</title>
     </head>
     <body>
-       <h1> <s:property value="author" />的全部著作如下：</h1>
+       <h1> <s:property value="name" />的全部著作如下：</h1>
        <table>
-            <tr><td>索引</td><td>书名</td><td>操作</td></tr>
+            <tr><td>索引</td><td>书名</td><td>作者ID</td><td>操作</td></tr>
             <s:iterator value="books" status="st">
                 <tr>
                 <td><s:property value="#st.getIndex()" /></td>
@@ -27,6 +27,8 @@
                      <s:property value="title"/>
                 </a>
                 </td>
+                
+                <td><s:property value="authorID" /></td>
                 
                 <td>
                 <a href=
