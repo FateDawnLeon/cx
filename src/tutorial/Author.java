@@ -48,26 +48,27 @@ public class Author {
 		Conn c = new Conn();
 		Connection con = c.getConnection();
 		try{
-			Statement sql = con.createStatement();
-			ResultSet res = sql.executeQuery("select * from Author where Name='"+name+"';");
-			int id;
-			if(res.next()){
-				id = res.getInt("AuthorID");
+			Statement sql1 = con.createStatement();
+			Statement sql2 = con.createStatement();
+			ResultSet res1 = sql1.executeQuery("select * from Author where Name='"+name+"';");
+			if(!res1.next()){
+				return "failure";
 			}
-			else{
-				  return "failure";
-			}
-			res = sql.executeQuery("select * from Book where AuthorID="+String.valueOf(id));
+			res1.beforeFirst();
 			books = new ArrayList<Book>();
-			while(res.next()){
-				Book book = new Book();
-				book.setIsbn(res.getString("ISBN"));
-				book.setTitle(res.getString("Title"));
-				book.setAuthorID(res.getInt("AuthorID"));
-				book.setPublisher(res.getString("Publisher"));
-				book.setPublishDate(res.getDate("PublishDate"));
-				book.setPrice(res.getFloat("Price"));
-				books.add(book);
+			while(res1.next()){
+				ResultSet res2 = sql2.executeQuery("select * from Book where AuthorID="
+				                                  + String.valueOf(res1.getInt("AuthorID")));
+				while(res2.next()){
+					Book book = new Book();
+					book.setIsbn(res2.getString("ISBN"));
+					book.setTitle(res2.getString("Title"));
+					book.setAuthorID(res2.getInt("AuthorID"));
+					book.setPublisher(res2.getString("Publisher"));
+					book.setPublishDate(res2.getDate("PublishDate"));
+					book.setPrice(res2.getFloat("Price"));
+					books.add(book);
+				}
 			}
 		}catch(Exception e){
 			e.printStackTrace();
