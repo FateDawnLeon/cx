@@ -6,36 +6,36 @@
         <title>图书信息</title>
     </head>
     <body>
-    <h1 align = center>图书信息</h1>
-    <table align = center border="1">
+    <table align = center border="5" width="500">
+    <caption><h1>图书信息</h1></caption>
          <tr> 
-         <td>ISBN</td> 
-         <td><s:property value="isbn" /></td>
+         <td align="center">ISBN</td> 
+         <td align="center"><s:property value="isbn" /></td>
          </tr>
          
          <tr>
-         <td>Title</td>
-         <td><s:property value="title" /></td>
+         <td align="center">Title</td>
+         <td align="center"><s:property value="title" /></td>
          </tr>
          
          <tr>
-         <td>AuthorID</td>
-         <td><s:property value="authorID" /></td>
+         <td align="center">AuthorID</td>
+         <td align="center"><s:property value="authorID" /></td>
          </tr>
          
          <tr>
-         <td>Publisher</td>
-         <td><s:property value="publisher" /></td>
+         <td align="center">Publisher</td>
+         <td align="center"><s:property value="publisher" /></td>
          </tr>
          
          <tr>
-         <td>PublishDate</td>
-         <td><s:property value="publishDate.toString()" /></td>
+         <td align="center">PublishDate</td>
+         <td align="center"><s:property value="publishDate.toString()" /></td>
          </tr>
          
          <tr>
-         <td>Price</td>
-         <td><s:property value="price" /></td>
+         <td align="center">Price</td>
+         <td align="center"><s:property value="price" /></td>
          </tr>
          
     </table>

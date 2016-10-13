@@ -6,14 +6,20 @@
         <title>查询结果</title>
     </head>
     <body>
-       <h1 align="center"> <s:property value="name" />的全部著作</h1>
-       <table align="center" border="1">
-            <tr><td>索引</td><td>书名</td><td>作者ID</td><td>操作</td></tr>
+       <table align="center" border="6" width="500">
+            <caption><h1><s:property value="name" />的全部著作</h1></caption>
+            <tr>
+            <th>索引</th>
+            <th>书名</th>
+            <th>作者ID</th>
+            <th>操作</th>
+            </tr>
+
             <s:iterator value="books" status="st">
                 <tr>
-                <td><s:property value="#st.getIndex()" /></td>
+                <td align="center" ><s:property value="#st.getIndex()" /></td>
                 
-                <td>
+                <td align="center">
                 <a href=
                     "<s:url action="CheckInfo">
                      <s:param name="isbn"><s:property value="isbn"/></s:param>
@@ -23,22 +29,22 @@
                      <s:param name="publishDate"><s:property value="publishDate"/></s:param>
                      <s:param name="price"><s:property value="price"/></s:param>
                      </s:url>
-                    ">
+                    " style="text-decoration:none" >
                      <s:property value="title"/>
                 </a>
                 </td>
                 
-                <td><s:property value="authorID" /></td>
+                <td align="center"><s:property value="authorID" /></td>
                 
-                <td>
+                <td align="center">
                 <a href=
                      "<s:url action="Delete">
                       <s:param name="isbn">
                       <s:property value="isbn"/>
                       </s:param>
                       </s:url>
-                      ">
-                                    删除
+                      " style="text-decoration:none" >
+                      删除
                 </a>
                 </td>
                 
