@@ -14,7 +14,7 @@
     </head>
     <body>
        <table align="center" border="5" width="500">
-            <caption><h1><s:property value="name" />的全部著作</h1></caption>
+            <caption><h1>全部图书</h1></caption>
             <tr>
             <th>索引</th>
             <th>书名</th>

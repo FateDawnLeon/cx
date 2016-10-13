@@ -2,9 +2,23 @@
 <html>                      
     <head>
         <title>Search</title>
+        
+        <style type="text/css">
+        body {
+               background-image:url("http://desk.fd.zol-img.com.cn/t_s1920x1080c5/g5/M00/06/0B/ChMkJ1cZryyILwYoAAoo84eIVEMAAQZVQHj0SoACikL771.jpg");
+               background-size: 1920px 1080px;
+               background-repeat: no-repeat;
+               color: white;
+        }
+        h1 {
+             color: black;
+             font-family: 微软雅黑;
+        }
+        </style>
+        
     </head>
-    <body background="http://www.17sucai.com/upload/419920/2015-10-10/ff544162748b2ddf1d362b908737387f.jpg" >
-        <h1 style="text-align:center">图书管理系统</h1>
+    <body>
+        <h1 style="text-align:center">Leon的图书管理系统</h1>
         <hr/>
             
             <fieldset>
@@ -13,7 +27,7 @@
             <br>
                 <form action="ShowBooks">
             作者名：
-                <input type="text" name="name">
+                <input type="text" name="name" required>
                 <input type="submit" value="搜索">
             </form> 
             <br>
@@ -24,8 +38,7 @@
         <legend>添加新的图书</legend>
         <br>
         <form action="AddBook">
-          <center>
-            <table>
+            <table align="center">
             <tr><td>ISBN：</td><td><input type="text"  name="isbn" required /></td></tr>
             <tr><td>书名：</td><td><input type="text"   name="title" required /></td></tr>
             <tr><td>作者ID：</td><td><input type="text"  name="authorID" required/></td></tr>
@@ -34,7 +47,20 @@
             <tr><td>价格：</td><td><input type="text"   name="price" /></td></tr>
             <tr><td></td><td align="right"><input type="submit" value="添加" /></td></tr>
             </table>
-          </center>
+        </form>
+        <br>
+        </fieldset>
+        
+        <fieldset>
+        <legend>添加新的作者</legend>
+        <br>
+        <form action="AddAuthor">
+            <table align="center">
+            <tr><td>作者姓名：</td><td><input type="text"  name="name" required></td></tr>
+            <tr><td>作者年龄：</td><td><input type="text"   name="age" ></td></tr>
+            <tr><td>作者国籍：</td><td><input type="text"  name="country" ></td></tr>
+            <tr><td></td><td align="right"><input type="submit"  value="添加"></td></tr>
+            </table>
         </form>
         <br>
         </fieldset>

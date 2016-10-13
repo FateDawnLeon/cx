@@ -4,9 +4,16 @@
 <html>
     <head>
         <title>图书信息</title>
+        <style type="text/css">
+        body {
+               background-image:url("http://desk.fd.zol-img.com.cn/t_s1920x1080c5/g5/M00/07/00/ChMkJ1fpzu2IDQUeAAJMvn5sgAcAAWZIQNNPaAAAkzW691.jpg");
+               background-size: 1920px 1080px;
+               background-repeat: no-repeat;
+        }
+        </style>
     </head>
     <body>
-    <table align = center border="5" width="500">
+    <table align="center" border="5" width="500">
     <caption><h1>图书信息</h1></caption>
          <tr> 
          <td align="center">ISBN</td> 

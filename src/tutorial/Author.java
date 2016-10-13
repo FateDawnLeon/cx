@@ -11,7 +11,7 @@ public class Author {
 	private int age;
 	private String country;
 	private ArrayList<Book> books;
-	
+	private ArrayList<Author> authors;
 	
 	public int getAuthorID() {
 		return authorID;
@@ -43,6 +43,14 @@ public class Author {
 	public void setBooks(ArrayList<Book> books) {
 		this.books = books;
 	}
+	public ArrayList<Author> getAuthors() {
+		return authors;
+	}
+	public void setAuthors(ArrayList<Author> authors) {
+		this.authors = authors;
+	}
+	
+	
 	
 	public String searchAuthorBooks(){
 		Conn c = new Conn();
@@ -98,5 +106,44 @@ public class Author {
 		}
 	}
 	
+	public String showAllAuthors(){
+    	Conn c = new Conn();
+		Connection con = c.getConnection();
+		try{
+			Statement sql = con.createStatement();
+			ResultSet res = sql.executeQuery("select * from Author");
+			authors = new ArrayList<Author>();
+			while(res.next()){
+				Author author = new Author();
+				author.setAuthorID(res.getInt("AuthorID"));
+				author.setName(res.getString("Name"));
+				author.setAge(res.getInt("Age"));
+				author.setCountry(res.getString("Country"));
+				authors.add(author);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			return "exception";
+		}
+		return "success";
+    }
+	
+	public String deleteAuthor(){
+    	Conn c = new Conn();
+		Connection con = c.getConnection();
+		try{
+			Statement sql = con.createStatement();
+			int res = sql.executeUpdate("delete from Author where AuthorID="+authorID+";");
+			if(res==1){
+				return "success";
+			}
+			else{
+				return "failure";
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			return "exception";
+		}
+    }
 	
 }

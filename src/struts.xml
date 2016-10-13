@@ -34,5 +34,19 @@
             <result name="exception">Exception.jsp</result>
         </action>
         
+        <action name="ShowAllBooks" class="tutorial.Book" method="showAllBooks">
+            <result>AllBooks.jsp</result>
+        </action>
+        
+        <action name="ShowAllAuthors" class="tutorial.Author" method="showAllAuthors">
+            <result>AllAuthors.jsp</result>
+        </action>
+        
+        <action name="DeleteAuthor" class="tutorial.Author" method="deleteAuthor">
+            <result name="success">Search.jsp</result>
+            <result name="failure">DeleteFailure.jsp</result>
+            <result name="exception">Exception.jsp</result>
+        </action>
+        
     </package>
 </struts>

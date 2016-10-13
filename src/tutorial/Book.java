@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class Book {
         private String isbn;
@@ -12,6 +13,7 @@ public class Book {
         private Date publishDate;
         private int authorID;
         private float price;
+        private ArrayList<Book> books;
         
         public String getIsbn(){
         	return isbn;
@@ -31,6 +33,10 @@ public class Book {
         public float getPrice(){
         	return price;
         }
+        public ArrayList<Book> getBooks() {
+			return books;
+		}
+		
         
         public void setIsbn(String isbn){
         	this.isbn = isbn;
@@ -50,6 +56,9 @@ public class Book {
         public void setPrice(float price){
         	this.price = price;
         }
+        public void setBooks(ArrayList<Book> books) {
+			this.books = books;
+		}
 
         
         public String showBookInfo(){
@@ -116,8 +125,29 @@ public class Book {
     		}
         }
         
-        public String updateBook(){
-        	return "";
+        public String showAllBooks(){
+        	Conn c = new Conn();
+    		Connection con = c.getConnection();
+    		try{
+    			Statement sql = con.createStatement();
+    			ResultSet res = sql.executeQuery("select * from Book");
+    			books = new ArrayList<Book>();
+    			while(res.next()){
+    				Book book = new Book();
+					book.setIsbn(res.getString("ISBN"));
+					book.setTitle(res.getString("Title"));
+					book.setAuthorID(res.getInt("AuthorID"));
+					book.setPublisher(res.getString("Publisher"));
+					book.setPublishDate(res.getDate("PublishDate"));
+					book.setPrice(res.getFloat("Price"));
+					books.add(book);
+    			}
+    		}catch(Exception e){
+    			e.printStackTrace();
+    			return "exception";
+    		}
+    		return "success";
         }
+		
         
 }
