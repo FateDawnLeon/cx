@@ -9,6 +9,7 @@
                background-image:url("http://desk.fd.zol-img.com.cn/t_s1920x1080c5/g5/M00/07/00/ChMkJ1fpzu2IDQUeAAJMvn5sgAcAAWZIQNNPaAAAkzW691.jpg");
                background-size: 1920px 1080px;
                background-repeat: no-repeat;
+               background-attachment:fixed
         }
         </style>
     </head>
@@ -45,6 +46,12 @@
                 </tr>
             </s:iterator>
             
-        </table>        
+        </table> 
+        <br><br> 
+        <div style="width:100%;text-align:center">       
+        <form action="ReturnMain">
+              <input type="submit" value="返回主页">
+        </form>
+        </div>       
     </body>
 </html>

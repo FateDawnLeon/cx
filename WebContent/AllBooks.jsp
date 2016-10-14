@@ -9,6 +9,7 @@
                background-image:url("http://desk.fd.zol-img.com.cn/t_s1920x1080c5/g5/M00/07/00/ChMkJ1fpzu2IDQUeAAJMvn5sgAcAAWZIQNNPaAAAkzW691.jpg");
                background-size: 1920px 1080px;
                background-repeat: no-repeat;
+               background-attachment:fixed
         }
         </style>
     </head>
@@ -36,7 +37,7 @@
                      <s:param name="publishDate"><s:property value="publishDate"/></s:param>
                      <s:param name="price"><s:property value="price"/></s:param>
                      </s:url>
-                    " style="text-decoration:none" >
+                    " style="text-decoration:none" target="_blank">
                      <s:property value="title"/>
                 </a>
                 </td>
@@ -57,6 +58,12 @@
                 
                 </tr>
             </s:iterator>
-        </table>        
+        </table> 
+        <br><br> 
+        <div style="width:100%;text-align:center">       
+        <form action="ReturnMain">
+              <input type="submit" value="返回主页">
+        </form>
+        </div>       
     </body>
 </html>

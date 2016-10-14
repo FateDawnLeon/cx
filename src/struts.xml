@@ -12,7 +12,7 @@
         </action>
         
         <action name="CheckInfo" class="tutorial.Book" method="showBookInfo">
-            <result>BookInformation.jsp</result>
+            <result name="success">BookInformation.jsp</result>
         </action>
         
         <action name="Delete" class="tutorial.Book" method="deleteBook">
@@ -35,17 +35,23 @@
         </action>
         
         <action name="ShowAllBooks" class="tutorial.Book" method="showAllBooks">
-            <result>AllBooks.jsp</result>
+            <result name="success">AllBooks.jsp</result>
+            <result name="exception">Exception.jsp</result>
         </action>
         
         <action name="ShowAllAuthors" class="tutorial.Author" method="showAllAuthors">
-            <result>AllAuthors.jsp</result>
+            <result name="success">AllAuthors.jsp</result>
+            <result name="exception">Exception.jsp</result>
         </action>
         
         <action name="DeleteAuthor" class="tutorial.Author" method="deleteAuthor">
             <result name="success">Search.jsp</result>
             <result name="failure">DeleteFailure.jsp</result>
             <result name="exception">Exception.jsp</result>
+        </action>
+        
+        <action name="ReturnMain" class="tutorial.Book" method="showBookInfo">
+            <result name="success">Search.jsp</result>
         </action>
         
     </package>

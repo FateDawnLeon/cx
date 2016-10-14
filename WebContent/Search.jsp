@@ -6,7 +6,7 @@
         <style type="text/css">
         body {
                background-image:url("http://desk.fd.zol-img.com.cn/t_s1920x1080c5/g5/M00/06/0B/ChMkJ1cZryyILwYoAAoo84eIVEMAAQZVQHj0SoACikL771.jpg");
-               background-size: 1920px 1080px;
+               background-size: 1920px 946px;
                background-repeat: no-repeat;
                color: white;
         }

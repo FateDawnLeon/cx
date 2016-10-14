@@ -53,19 +53,18 @@ public class Author {
 	
 	
 	public String searchAuthorBooks(){
-		Conn c = new Conn();
-		Connection con = c.getConnection();
+		Connection con = Conn.getConnection();
 		try{
 			Statement sql1 = con.createStatement();
 			Statement sql2 = con.createStatement();
-			ResultSet res1 = sql1.executeQuery("select * from Author where Name='"+name+"';");
+			ResultSet res1 = sql1.executeQuery("select * from author where Name='"+name+"';");
 			if(!res1.next()){
 				return "abscence";
 			}
 			res1.beforeFirst();
 			books = new ArrayList<Book>();
 			while(res1.next()){
-				ResultSet res2 = sql2.executeQuery("select * from Book where AuthorID="
+				ResultSet res2 = sql2.executeQuery("select * from book where AuthorID="
 				                                  + String.valueOf(res1.getInt("AuthorID")));
 				while(res2.next()){
 					Book book = new Book();
@@ -86,11 +85,10 @@ public class Author {
 	}
 	
 	public String addAuthor(){
-		Conn c = new Conn();
-		Connection con = c.getConnection();
+		Connection con = Conn.getConnection();
 		try{
 			Statement sql = con.createStatement();
-			int res = sql.executeUpdate("insert into Author(Name,Age,Country) values("
+			int res = sql.executeUpdate("insert into author(Name,Age,Country) values("
 			                             +  "'"  +  name  +  "',"
 			                             +     age        +  ","
 			                             +  "'"  +  country + "');");
@@ -107,11 +105,10 @@ public class Author {
 	}
 	
 	public String showAllAuthors(){
-    	Conn c = new Conn();
-		Connection con = c.getConnection();
+		Connection con = Conn.getConnection();
 		try{
 			Statement sql = con.createStatement();
-			ResultSet res = sql.executeQuery("select * from Author");
+			ResultSet res = sql.executeQuery("select * from author");
 			authors = new ArrayList<Author>();
 			while(res.next()){
 				Author author = new Author();
@@ -129,11 +126,10 @@ public class Author {
     }
 	
 	public String deleteAuthor(){
-    	Conn c = new Conn();
-		Connection con = c.getConnection();
+		Connection con = Conn.getConnection();
 		try{
 			Statement sql = con.createStatement();
-			int res = sql.executeUpdate("delete from Author where AuthorID="+authorID+";");
+			int res = sql.executeUpdate("delete from author where AuthorID="+authorID+";");
 			if(res==1){
 				return "success";
 			}

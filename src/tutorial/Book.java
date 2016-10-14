@@ -66,11 +66,10 @@ public class Book {
         }
         
         public String deleteBook(){
-        	Conn c = new Conn();
-    		Connection con = c.getConnection();
+        	Connection con = Conn.getConnection();
     		try{
     			Statement sql = con.createStatement();
-    			int res = sql.executeUpdate("delete from Book where ISBN='"+isbn+"';");
+    			int res = sql.executeUpdate("delete from book where ISBN='"+isbn+"';");
     			if(res==1){
     				return "success";
     			}
@@ -84,17 +83,16 @@ public class Book {
         }
         
         public String addBook(){
-        	Conn c = new Conn();
-    		Connection con = c.getConnection();
+        	Connection con = Conn.getConnection();
     		try{
     			Statement sql = con.createStatement();
-				ResultSet res = sql.executeQuery("select * from Author where AuthorID="+authorID+";");   
+				ResultSet res = sql.executeQuery("select * from author where AuthorID="+authorID+";");   
 				if(!res.next()){
 					return "abscence";
 				}
 				int outcome;
 				if(publishDate==null){
-					outcome = sql.executeUpdate("insert into Book values(" 
+					outcome = sql.executeUpdate("insert into book values(" 
   				           +  "'"  +  isbn            +  "',"
   				           +  "'"  +  title      	  +  "',"
   				           +  ""   +  authorID		  +  ","
@@ -104,7 +102,7 @@ public class Book {
   				           );
 				}
 				else{
-					outcome = sql.executeUpdate("insert into Book values(" 
+					outcome = sql.executeUpdate("insert into book values(" 
  				           +  "'"  +  isbn            +  "',"
  				           +  "'"  +  title      	  +  "',"
  				           +  ""   +  authorID		  +  ","
@@ -126,11 +124,10 @@ public class Book {
         }
         
         public String showAllBooks(){
-        	Conn c = new Conn();
-    		Connection con = c.getConnection();
+        	Connection con = Conn.getConnection();
     		try{
     			Statement sql = con.createStatement();
-    			ResultSet res = sql.executeQuery("select * from Book");
+    			ResultSet res = sql.executeQuery("select * from book");
     			books = new ArrayList<Book>();
     			while(res.next()){
     				Book book = new Book();
@@ -149,5 +146,4 @@ public class Book {
     		return "success";
         }
 		
-        
 }
