@@ -1,3 +1,5 @@
+//this is the class of Author that deals with all actions related to author objects
+
 package tutorial;
 
 import java.sql.Connection;

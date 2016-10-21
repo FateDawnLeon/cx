@@ -1,3 +1,5 @@
+//this is an auxiliary class that help to implement options for connecting front web to back database
+
 package tutorial;
 
 import java.sql.Connection;

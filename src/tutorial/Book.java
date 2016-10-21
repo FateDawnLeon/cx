@@ -1,3 +1,5 @@
+//this is the class of Book that deals with all actions related to Book objects
+
 package tutorial;
 
 import java.sql.Connection;
